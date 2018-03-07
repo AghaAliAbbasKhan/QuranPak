@@ -1,0 +1,81 @@
+surah-recitor {
+    .lang_class {
+        width: 123px;
+        height: 40px;
+        float: right;
+        margin-top: 6px;
+        padding-right: 2px;
+    }
+    .active_lang {
+        opacity: 0.5;
+    }
+    #perkthimi {
+        color: blue;
+        font-size: 16px;
+        white-space: normal !important;
+    }
+    #leximi {
+        color: red;
+        font-size: 16px;
+        white-space: normal !important;
+    }
+    #arabic {
+        color: black;
+        font-size: 20px;
+        font-family: font;
+        white-space: normal !important;
+        text-align: right !important;
+        width: 100%;
+    }
+    .row {
+        padding: 9px;
+        margin: 0 !important;
+    }
+    .addbackgeound {
+        border-style: solid;
+        border-radius: 8px !important;
+        border-width: 2px;
+        border-color: #f7c0c0;
+        background-color: gray;
+    }
+    .addbackgeound1 {
+        background-color: #11c1f3;
+    }
+    .delbackgeound {
+        background-color: none;
+    }
+    .font_size {
+        width: 30px;
+    }
+    .font_demo {
+        width: 100px;
+        float: left;
+    }
+    .active_lang {
+        opacity: 0.9!important;
+        border: 4px;
+        border-color: black;
+        border-style: solid;
+    }
+    .lang_btn_ar {
+        background: #0baa00;
+        background: -moz-linear-gradient(top, #0baa00 1%, #007515 100%);
+        background: -webkit-linear-gradient(top, #0baa00 1%, #007515 100%);
+        background: linear-gradient(to bottom, #0baa00 1%, #007515 100%);
+        filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#0baa00', endColorstr='#007515', GradientType=0);
+    }
+    .lang_btn_al {
+        background: #ff6b6b;
+        background: -moz-linear-gradient(top, #ff6b6b 0%, #c90000 100%);
+        background: -webkit-linear-gradient(top, #ff6b6b 0%, #c90000 100%);
+        background: linear-gradient(to bottom, #ff6b6b 0%, #c90000 100%);
+        filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ff6b6b', endColorstr='#c90000', GradientType=0);
+    }
+    .lang_btn_aral {
+        background: #219900;
+        background: -moz-linear-gradient(left, #219900 0%, #339916 46%, #ff2b2b 46%, #ff2b2b 46%, #ff1414 99%);
+        background: -webkit-linear-gradient(left, #219900 0%, #339916 46%, #ff2b2b 46%, #ff2b2b 46%, #ff1414 99%);
+        background: linear-gradient(to right, #219900 0%, #339916 46%, #ff2b2b 6%, #ff2b2b 46%, #ff1414 99%);
+        filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#219900', endColorstr='#ff1414', GradientType=1);
+    }
+}

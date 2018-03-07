@@ -1,0 +1,84 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>
+      KuraniShqip.Com
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content>
+  <div class="sf">
+    <div class="d">
+    </div>
+    <div class="d1">
+      <p style="text-align: center;">
+        <strong>Regullimet e fontit</strong>
+      </p>
+
+      <!-- <ion-list>
+        <ion-list-header>
+          Adjust Text
+        </ion-list-header>
+        <ion-item>
+          <ion-range min="0" max="50" step="1" snaps="true" [(ngModel)]="color_info">
+            <ion-label range-left class="small-text">A</ion-label>
+            <ion-label range-right>A</ion-label>
+          </ion-range>
+        </ion-item>
+      </ion-list> -->
+
+      <div class="item" style="padding: 10px !important;    font-size: 14px;">Fonti Arab: &nbsp;
+        <!--   <button ion-button icon-only (click)="audioTrack.canPlay ? audioTrack.play() : next()"><ion-icon name="play"></ion-icon></button> -->
+
+        <button ion-button id="aplus" class="fontButton " (click)="fontSizeChange(color_info,'A',1)">+</button>&nbsp;
+        <button ion-button id="aminus" (click)="fontSizeChange(color_info,'A',-1)">-</button>
+        <div class="font_size">{{aStartFont}}</div>
+        <div class="font_demo" [style.font-size.px]="aStartFont" [style.color]="arabicCol">َحِيمِ'</div>
+      </div>
+      <hr>
+
+
+      <div class="item" style="padding: 10px !important;    font-size: 14px;">Fonti Latin: &nbsp;
+        <button id="lplus" ion-button (click)="fontSizeChange(color_info,'L',1)">+</button>&nbsp;
+        <button id="lminus" ion-button (click)="fontSizeChange(color_info,'L',-1)">-</button>
+        <div class="font_size">{{lStartFont}}</div>
+        <div class="font_demo" [style.font-size.px]="lStartFont" [style.color]="latinbCol">Test</div>
+      </div>
+      <hr>
+
+      <div class="item" style="padding: 10px !important;    font-size: 14px;">Përkthimi: &nbsp; &nbsp;
+        <button id="pplus" ion-button (click)="fontSizeChange(color_info,'P',1)">+</button>&nbsp;
+        <button id="pminus" ion-button (click)="fontSizeChange(color_info,'P',-1)">-</button>
+        <div class="font_size">{{pStartFont}}</div>
+        <div class="font_demo" [style.font-size.px]="pStartFont" [style.color]="perCol">Teksti</div>
+      </div>
+      <hr>
+      <hr>
+
+      <p style="text-align: center;">
+        <strong>Ngjyrat</strong>
+      </p>
+
+
+      <div class="item" style="padding: 10px !important;    font-size: 14px;">Fonti Arab:
+        <input type="color" name="arabicCol" [(ngModel)]="arabicCol" value="#ef2424" style="float: right;">
+
+      </div>
+      <div class="item" style="padding: 10px !important;    font-size: 14px;">Fonti Latin:
+        <input type="color" [(ngModel)]="latinbCol" name="latinbCol" style="float: right;">
+
+
+      </div>
+      <div class="item" style="padding: 10px !important;    font-size: 14px;">Përkthimi:
+        <input type="color" name="perCol" [(ngModel)]="perCol" style="float: right;">
+      </div>
+      <div class="item" style="padding: 10px !important;    font-size: 14px;">Theksimi:
+        <input type="color" name="highCol" [(ngModel)]="highCol" value="#1g154B" style="float: right;">
+      </div>
+      <div class="item" style="padding: 10px !important;    font-size: 14px;">Sfond:
+        <input type="color" name="backCol" [(ngModel)]="backCol" value="#1d14eb" style="float: right;">
+      </div>
+      <button style="text-align: center;" ion-button class="button-block" (click)="setcolor(arabicCol)">Ruaj</button>
+    </div>
+  </div>
+</ion-content>

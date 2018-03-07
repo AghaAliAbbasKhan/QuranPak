@@ -1,0 +1,55 @@
+<ion-header>
+    <ion-navbar>
+        <ion-title [navPush]="mainpage">Surah2</ion-title>
+        <ion-buttons right>
+            <button ion-button icon-only [navPush]="contactpage">
+                <ion-icon name="settings"></ion-icon>
+            </button>
+        </ion-buttons>
+    </ion-navbar>
+</ion-header>
+
+<ion-content padding [style.background-color]="backCol">
+
+    <div class="loading" *ngIf="loading">
+        <ion-spinner></ion-spinner>
+    </div>
+
+    <ion-list style="padding-left: 1px;margin-right: 1px;">
+        <ion-item style="margin-right: 1px;" [style.background-color]="backCol" *ngFor="let track of myTracks; let i = index" id="l{{track.id}}">
+            <div (click)="playthis(track,i)" class="item item-thumbnail-left rowclass row" id="p{{track.id}}">
+                <div id="arabic" class="arabic" [style.font-size.px]="aStartFont" [style.color]="arabicCol">{{track.arabiclanguage}}</div>
+                <div id="leximi" class="leximi" [style.font-size.px]="lStartFont" [style.color]="latinbCol">{{track.englishlanguage}}</div>
+                <div id="perkthimi" class="perkthimi" [style.font-size.px]="pStartFont" [style.color]="perCol">{{track.lablanguage}}</div>
+                <br>
+                <!-- <button ion-button (click)="currentTrack = track">Play</button> -->
+                <!-- <button ion-button (click)="add(track)">Add</button> -->
+            </div>
+        </ion-item>
+    </ion-list>
+
+</ion-content>
+
+<ion-footer>
+    <ion-toolbar>
+        <audio-track #audioTrack [track]="currentTrack" [autoplay]="true" (onFinish)="onTrackFinished($event)">
+            <div style="display: flex">
+                <audio-track-progress-bar duration progress [audioTrack]="audioTrack" style="width: 100%; margin: 0 10px"></audio-track-progress-bar>
+            </div>
+            <div style="text-align: center;">
+                <button ion-button icon-only (click)="audioTrack.canPlay ? audioTrack.play() : next()">
+                    <ion-icon name="play"></ion-icon>
+                </button>
+                <button ion-button icon-only (click)="audioTrack.pause()">
+                    <ion-icon name="pause"></ion-icon>
+                </button>
+                <!-- <button ion-button icon-only (click)="next()"><ion-icon name="skip-forward"></ion-icon></button> -->
+                <button ion-button id="btn_ar" class="lang_btn_ar" (click)="changeLanguage('btn_ar', 'AR')">AR</button>
+                &nbsp;
+                <button ion-button id="btn_al" class="lang_btn_al" (click)="changeLanguage('btn_al', 'AL')">SHq</button>
+                &nbsp;
+                <button ion-button id="btn_both" class="lang_btn_aral active_lang" (click)="changeLanguage('btn_both', 'ARAL')">AR|SHQ</button>
+            </div>
+        </audio-track>
+    </ion-toolbar>
+</ion-footer>
