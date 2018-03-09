@@ -3,6 +3,7 @@ import { NavController, Events, AlertController } from 'ionic-angular';
 import { AudioProvider, ITrackConstraint } from 'ionic-audio';
 import { SurahRecitor } from '../surahRecitor/recitor';
 import { InAppBrowser } from '@ionic-native/in-app-browser';
+import { ApiProvider } from '../../provider/api.provider';
 
 @Component({
   selector: 'page-mainpage',
@@ -17,6 +18,7 @@ export class MainPage {
     public inapp: InAppBrowser,
     public alertCtrl: AlertController,
     public event: Events,
+    public api: ApiProvider,
     public navCtrl: NavController) {
     this.event.subscribe('notificationRecieved', (data) => {
       let alert = this.alertCtrl.create({
@@ -33,8 +35,28 @@ export class MainPage {
     })
   }
 
-  recite_surah(id) {
-    this.navCtrl.push(SurahRecitor, { surahId: id })
+  ionViewDidLoad() {
+    this.api.checkBlockStatus().subscribe((success: any) => {
+      if (success) {
+        let alert = this.alertCtrl.create({
+          title: 'INFO',
+          enableBackdropDismiss: false,
+          subTitle: success.updateMessage,
+          buttons: [{
+            text: 'KLIKONI KETU',
+            handler: () => {
+              this.inapp.create(success.updateLink, '_system');
+              return false;
+            }
+          }]
+        });
+        alert.present();
+      }
+    }, (error) => { })
+  }
+
+  recite_surah(id, name) {
+    this.navCtrl.push(SurahRecitor, { surahId: id, name: name })
   }
 
 

@@ -22,6 +22,7 @@ export class SurahRecitor {
     contactpage: any = ContactPage;
     color_info = Array();
     loading: boolean = true;
+    surahName: string = '';
 
     arabicCol = null;
     latinbCol = null;
@@ -37,6 +38,7 @@ export class SurahRecitor {
         private _cdRef: ChangeDetectorRef,
         public surahs: Surahs) {
         this.surahId = params.get('surahId');
+        this.surahName = params.get('name');
         this.getColor();
     }
 
@@ -134,12 +136,14 @@ export class SurahRecitor {
                 jQuery("#p" + track.id).addClass("addbackgeound");
                 jQuery("#p" + track.id).css("background-color", this.highCol);
 
-                //
-                let topp = jQuery("#l" + track.id).offset().top;
-                let hit = jQuery("#l" + track.id).outerHeight();
-                //alert (topp+hit);
-                this.content.scrollTo(0, 0, 0);
-                this.content.scrollTo(0, (topp - hit), 1000);
+                let element = document.getElementById('l' + track.id);
+                let parent = document.getElementById('p' + track.id);
+                let yOffset = element.offsetTop;
+                let yOffset_parent = parent.offsetTop;
+                let total_offset = yOffset + yOffset_parent;
+                if (total_offset > 0)
+                    total_offset -= 20;
+                this.content.scrollTo(0, total_offset, 1000);
             }
         }
     }

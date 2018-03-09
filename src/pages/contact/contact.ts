@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { NavController } from 'ionic-angular';
+import { MainPage } from '../mainpage/mainpage';
 
 /*
 import { S3Page }  from '../s3/s3';
@@ -203,7 +204,7 @@ export class ContactPage {
 		localStorage.setItem('pStartFont', JSON.stringify(this.pStartFont));
 		localStorage.setItem('lStartFont', JSON.stringify(this.lStartFont));
 
-		// this.navCtrl.getRootNav().setRoot();
+		this.navCtrl.setRoot(MainPage);
 	}
 
 	getColor() {

@@ -12,6 +12,8 @@ import { SurahRecitor } from '../pages/surahRecitor/recitor';
 import { OneSignal } from '@ionic-native/onesignal';
 import { AdMobFree } from '@ionic-native/admob-free';
 import { InAppBrowser } from '@ionic-native/in-app-browser';
+import { ApiProvider } from '../provider/api.provider';
+import { HttpModule } from '@angular/http';
 
 let pages = [
   MyApp,
@@ -36,7 +38,8 @@ export function providers() {
     StatusBar,
     OneSignal,
     AdMobFree,
-    InAppBrowser
+    InAppBrowser,
+    ApiProvider
   ];
 }
 export function entryComponents() {
@@ -50,6 +53,7 @@ export function declarations() {
   declarations: declarations(),
   imports: [
     BrowserModule,
+    HttpModule,
     IonicModule.forRoot(MyApp),
     IonicAudioModule.forRoot(defaultAudioProviderFactory),
     // or use a custom provided function shown above myCustomAudioProviderFactory
