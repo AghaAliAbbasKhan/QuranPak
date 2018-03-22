@@ -14,14 +14,14 @@ import { AdMobFree } from '@ionic-native/admob-free';
 import { InAppBrowser } from '@ionic-native/in-app-browser';
 import { ApiProvider } from '../provider/api.provider';
 import { HttpModule } from '@angular/http';
-
+import { Insomnia } from '@ionic-native/insomnia';
 let pages = [
   MyApp,
   MainPage,
   ContactPage,
   SurahRecitor
 ];
-
+ 
 /**
  * Sample custom factory function to use with ionic-audio
  */
@@ -39,6 +39,7 @@ export function providers() {
     OneSignal,
     AdMobFree,
     InAppBrowser,
+	Insomnia,
     ApiProvider
   ];
 }

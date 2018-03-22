@@ -18,6 +18,8 @@
     <ion-list style="padding-left: 1px;margin-right: 1px;">
         <ion-item style="margin-right: 1px;" [style.background-color]="backCol" *ngFor="let track of myTracks; let i = index" id="l{{track.id}}">
             <div (click)="playthis(track,i)" class="item item-thumbnail-left rowclass row" id="p{{track.id}}">
+			                <div class="idnumber" >{{track.id}}</div>
+
                 <div id="arabic" class="arabic" [style.font-size.px]="aStartFont" [style.color]="arabicCol">{{track.arabiclanguage}}</div>
                 <div id="leximi" class="leximi" [style.font-size.px]="lStartFont" [style.color]="latinbCol">{{track.englishlanguage}}</div>
                 <div id="perkthimi" class="perkthimi" [style.font-size.px]="pStartFont" [style.color]="perCol">{{track.lablanguage}}</div>

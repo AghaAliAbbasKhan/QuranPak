@@ -4,7 +4,7 @@ surah-recitor {
         height: 40px;
         float: right;
         margin-top: 6px;
-        padding-right: 2px;
+        padding-right: 0px;
     }
     .active_lang {
         opacity: 0.5;
@@ -28,10 +28,11 @@ surah-recitor {
         width: 100%;
     }
     .row {
-        padding: 9px;
+        padding: 0px;
         margin: 0 !important;
     }
     .addbackgeound {
+	padding: 3px;
         border-style: solid;
         border-radius: 8px !important;
         border-width: 2px;
@@ -78,4 +79,13 @@ surah-recitor {
         background: linear-gradient(to right, #219900 0%, #339916 46%, #ff2b2b 6%, #ff2b2b 46%, #ff1414 99%);
         filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#219900', endColorstr='#ff1414', GradientType=1);
     }
+	
+	
+	
+	.idnumber {
+     border: 2px solid #09741e;
+    border-radius: 100%;
+    padding: 0px 2px 0px 2px;
+    background: #27FA2E;
+}
 }

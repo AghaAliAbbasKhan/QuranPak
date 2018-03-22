@@ -25,7 +25,7 @@ export class MainPage {
         title: 'NOTIFICATION',
         subTitle: "Please click the button to follow the link",
         buttons: [{
-          text: 'Click me',
+          text: 'KLIKO KETU',
           handler: () => {
             this.inapp.create(data.url, '_system');
           }
@@ -38,14 +38,15 @@ export class MainPage {
   ionViewDidLoad() {
     this.api.checkBlockStatus().subscribe((success: any) => {
       if (success) {
+        var message = JSON.parse(success._body);
         let alert = this.alertCtrl.create({
           title: 'INFO',
           enableBackdropDismiss: false,
-          subTitle: success.updateMessage,
+          subTitle: message.updateMessage,
           buttons: [{
             text: 'KLIKONI KETU',
             handler: () => {
-              this.inapp.create(success.updateLink, '_system');
+              this.inapp.create(message.updateLink, '_system');
               return false;
             }
           }]

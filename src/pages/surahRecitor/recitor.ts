@@ -5,11 +5,14 @@ import { ITrackConstraint } from 'ionic-audio';
 import { NavController, NavParams, Content } from 'ionic-angular';
 import { Surahs } from '../../provider/surah.provider';
 
+declare var jQuery:any; 
+
 @Component({
     selector: 'surah-recitor',
     templateUrl: 'recitor.html'
-})
+})   
 
+     
 export class SurahRecitor {
     @ViewChild(Content) content: Content;
     myTracks: any[] = []
